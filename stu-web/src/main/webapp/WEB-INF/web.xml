@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<display-name>stu</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext*.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+
+	<security-constraint>
+		<display-name>Constraint</display-name>
+		<web-resource-collection>
+			<web-resource-name>A/D Group Service</web-resource-name>
+			<description>A/D Group Service</description>
+			<url-pattern>/adgroup.js</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<description>Authorized users</description>
+			<role-name>App ServiceManager Admins</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+
+	<security-role>
+		<description>Authorized users</description>
+		<role-name>App ServiceManager Admins</role-name>
+	</security-role>
+
+	<servlet>
+		<description>SpringServlet</description>
+		<display-name>SpringServlet</display-name>
+		<servlet-name>springServlet</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>edu.ucdavis.ucdh.stu.stu.resources,edu.ucdavis.ucdh.stu.stu.jaxb</param-value>
+		</init-param>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>edu.ucdavis.ucdh.stu.core.resources.RestResourceInitializer</param-value>
+		</init-param>
+ 		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<description>CasTicketValidationServlet</description>
+		<display-name>CasTicketValidationServlet</display-name>
+		<servlet-name>casTicketValidationServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.CasTicketValidationServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>AuthorizationServlet</description>
+		<display-name>AuthorizationServlet</display-name>
+		<servlet-name>authorizationServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.AuthorizationServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>ContactPortraitServlet</description>
+		<display-name>ContactPortraitServlet</display-name>
+		<servlet-name>contactPortraitServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.ContactPortraitServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>AvatarServlet</description>
+		<display-name>AvatarServlet</display-name>
+		<servlet-name>avatarServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.AvatarServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>BuildingServlet</description>
+		<display-name>BuildingServlet</display-name>
+		<servlet-name>buildingServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.BuildingServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>VcardServlet</description>
+		<display-name>VcardServlet</display-name>
+		<servlet-name>vcardServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.VcardServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>UniversalJsonServlet</description>
+		<display-name>UniversalJsonServlet</display-name>
+		<servlet-name>universalJsonServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.UniversalJsonServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>UniversalCsvServlet</description>
+		<display-name>UniversalCsvServlet</display-name>
+		<servlet-name>universalCsvServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.UniversalCsvServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>WhoAmIServlet</description>
+		<display-name>WhoAmIServlet</display-name>
+		<servlet-name>whoAmIServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.WhoAmIServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>PerformanceMonitorServlet</description>
+		<display-name>PerformanceMonitorServlet</display-name>
+		<servlet-name>performanceMonitorServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.PerformanceMonitorServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>ConnectionTestServlet</description>
+		<display-name>ConnectionTestServlet</display-name>
+		<servlet-name>connectionTestServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.ConnectionTestServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>CardHolderUpdateServlet</description>
+		<display-name>CardHolderUpdateServlet</display-name>
+		<servlet-name>cardHolderUpdateServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.CardHolderUpdateServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>DepartmentUpdateServlet</description>
+		<display-name>DepartmentUpdateServlet</display-name>
+		<servlet-name>departmentUpdateServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.DepartmentUpdateServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>PersonUpdateServlet</description>
+		<display-name>PersonUpdateServlet</display-name>
+		<servlet-name>personUpdateServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.PersonUpdateServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>PersonPublishServlet</description>
+		<display-name>PersonPublishServlet</display-name>
+		<servlet-name>personPublishServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.PersonPublishServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>IAMUpdateServlet</description>
+		<display-name>IAMUpdateServlet</display-name>
+		<servlet-name>iamUpdateServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.IAMUpdateServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>ServiceNowProxyServlet</description>
+		<display-name>ServiceNowProxyServlet</display-name>
+		<servlet-name>serviceNowProxyServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.ServiceNowProxyServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>ADGroupServiceServlet</description>
+		<display-name>ADGroupServiceServlet</display-name>
+		<servlet-name>adGroupServiceServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.ADGroupServiceServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>OnCallActivationServlet</description>
+		<display-name>OnCallActivationServlet</display-name>
+		<servlet-name>onCallActivationServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.OnCallActivationServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>LogoutServlet</description>
+		<display-name>LogoutServlet</display-name>
+		<servlet-name>logoutServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.LogoutServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>springServlet</servlet-name>
+		<url-pattern>/data/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>casTicketValidationServlet</servlet-name>
+		<url-pattern>/validate.js</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>authorizationServlet</servlet-name>
+		<url-pattern>/checkauthority.js</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>contactPortraitServlet</servlet-name>
+		<url-pattern>/photo/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>avatarServlet</servlet-name>
+		<url-pattern>/avatar/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>buildingServlet</servlet-name>
+		<url-pattern>/building.js</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>vcardServlet</servlet-name>
+		<url-pattern>/vcard/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>universalJsonServlet</servlet-name>
+		<url-pattern>/json.js</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>universalCsvServlet</servlet-name>
+		<url-pattern>*.csv</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>whoAmIServlet</servlet-name>
+		<url-pattern>/whoami.js</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>performanceMonitorServlet</servlet-name>
+		<url-pattern>/monitor.xml</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>connectionTestServlet</servlet-name>
+		<url-pattern>/conntest.js</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>cardHolderUpdateServlet</servlet-name>
+		<url-pattern>/cardholder.txt</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>departmentUpdateServlet</servlet-name>
+		<url-pattern>/deptupdate.txt</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>personUpdateServlet</servlet-name>
+		<url-pattern>/personupdate.txt</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>personPublishServlet</servlet-name>
+		<url-pattern>/publishperson/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>iamUpdateServlet</servlet-name>
+		<url-pattern>/iamupdate.txt</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>serviceNowProxyServlet</servlet-name>
+		<url-pattern>/servicenow.js</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>adGroupServiceServlet</servlet-name>
+		<url-pattern>/adgroup.js</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>onCallActivationServlet</servlet-name>
+		<url-pattern>/oncall.js</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>logoutServlet</servlet-name>
+		<url-pattern>/logout.js</url-pattern>
+	</servlet-mapping>
+
+</web-app>
