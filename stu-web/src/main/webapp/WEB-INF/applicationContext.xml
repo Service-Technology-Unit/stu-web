@@ -112,6 +112,10 @@
 		<constructor-arg value="${util.sm.person.publisher.id}" />
 	</bean>
 
+	<bean id="verifyIdFlag" class="java.lang.Boolean">
+		<constructor-arg value="${verify.id}" />
+	</bean>
+
 	<bean id="authorizedIpList" class="java.lang.String">
 		<constructor-arg value="${card.key.authorized.ip.list}" />
 	</bean>
