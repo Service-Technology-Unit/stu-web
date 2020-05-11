@@ -116,6 +116,10 @@
 		<constructor-arg value="${verify.id}" />
 	</bean>
 
+	<bean id="cardKeyIncludeExternals" class="java.lang.Boolean">
+		<constructor-arg value="${card.key.include.externals}" />
+	</bean>
+
 	<bean id="authorizedIpList" class="java.lang.String">
 		<constructor-arg value="${card.key.authorized.ip.list}" />
 	</bean>
