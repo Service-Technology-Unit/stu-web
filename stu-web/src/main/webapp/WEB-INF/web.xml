@@ -194,6 +194,13 @@
 	</servlet>
 
 	<servlet>
+		<description>LocationServlet</description>
+		<display-name>LocationServlet</display-name>
+		<servlet-name>locationServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.LocationServlet</servlet-class>
+	</servlet>
+
+	<servlet>
 		<description>LogoutServlet</description>
 		<display-name>LogoutServlet</display-name>
 		<servlet-name>logoutServlet</servlet-name>
@@ -298,6 +305,11 @@
 	<servlet-mapping>
 		<servlet-name>onCallActivationServlet</servlet-name>
 		<url-pattern>/oncall.js</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>locationServlet</servlet-name>
+		<url-pattern>/location/children.js</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
