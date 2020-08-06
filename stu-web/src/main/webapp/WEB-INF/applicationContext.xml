@@ -172,6 +172,26 @@
 		<constructor-arg value="${servicenow.password}" />
 	</bean>
 
+	<bean id="lenelServer" class="java.lang.String">
+		<constructor-arg value="${lenel.server}" />
+	</bean>
+
+	<bean id="lenelUser" class="java.lang.String">
+		<constructor-arg value="${lenel.username}" />
+	</bean>
+
+	<bean id="lenelPassword" class="java.lang.String">
+		<constructor-arg value="${lenel.password}" />
+	</bean>
+
+	<bean id="lenelDirectory" class="java.lang.String">
+		<constructor-arg value="${lenel.directory}" />
+	</bean>
+
+	<bean id="lenelApplicationId" class="java.lang.String">
+		<constructor-arg value="${lenel.application.id}" />
+	</bean>
+
 	<bean id="contactManager" class="edu.ucdavis.ucdh.stu.stu.manager.ContactManager">
 		<property name="eventService"       ref="eventService" />
 		<property name="serviceNowServer"   ref="serviceNowServer" />

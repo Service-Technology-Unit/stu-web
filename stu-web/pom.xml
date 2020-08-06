@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>edu.ucdavis.ucdh.stu</groupId>
   <artifactId>stu-web</artifactId>
-  <version>1.1.9</version>
+  <version>1.1.10</version>
   <packaging>war</packaging>
   <name>stu-web</name>
 	<description>Service Technology Unit support utilities</description>
@@ -262,7 +262,7 @@
 		<dependency>
 			<groupId>edu.ucdavis.ucdh.stu</groupId>
 			<artifactId>stu</artifactId>
-			<version>1.1.9</version>
+			<version>1.1.10</version>
 		</dependency>
 	</dependencies>
 
