@@ -145,6 +145,13 @@
 	</servlet>
 
 	<servlet>
+		<description>LenelCardHolderUpdateServlet</description>
+		<display-name>LenelCardHolderUpdateServlet</display-name>
+		<servlet-name>lenelCardHolderUpdateServlet</servlet-name>
+		<servlet-class>edu.ucdavis.ucdh.stu.stu.servlets.LenelCardHolderUpdateServlet</servlet-class>
+	</servlet>
+
+	<servlet>
 		<description>DepartmentUpdateServlet</description>
 		<display-name>DepartmentUpdateServlet</display-name>
 		<servlet-name>departmentUpdateServlet</servlet-name>
@@ -270,6 +277,11 @@
 	<servlet-mapping>
 		<servlet-name>cardHolderUpdateServlet</servlet-name>
 		<url-pattern>/cardholder.txt</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>lenelCardHolderUpdateServlet</servlet-name>
+		<url-pattern>/lenel.txt</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
